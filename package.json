@@ -1,7 +1,7 @@
 {
   "name": "testes_cypress",
   "version": "1.0.0",
-  "description": "--- ## Sprint 5 - Tech",
+  "description": "Sprint 5 - Tech",
   "main": "index.js",
   "scripts": {
     "cy:open": "cypress open",
