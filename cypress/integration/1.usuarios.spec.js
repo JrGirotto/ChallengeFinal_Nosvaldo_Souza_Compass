@@ -1,5 +1,6 @@
 /// <reference types="cypress" />>
 
+import Factory from '../fixtures/factory'
 import Serverest from '../services/serverest.service'
 import ValidaServerest from '../services/validaServerest.service'
 
@@ -18,21 +19,42 @@ describe('Casos de teste sobre a rota /usuario da API Serverest', () => {
 			expect(res.body.message).to.be.eq('Este email já está sendo usado')
 		})	
 	})
-	
-	// it('Validar comando personalizado', () => {
-	// 	cy.rest('GET', '/usuarios').then( res => {
-	// 		expect(res).to.be.a('object')
-	// 		cy.log(JSON.stringify(res))
-	// 	})	
-	// })
 
 	it('Realizar o login com sucesso', () => {
 		Serverest.buscarUsuariosParaLogin()
 		cy.get('@usuarioLogin').then( usuario => {
 			Serverest.logar(usuario).then( res => {
-			ValidaServerest.validarLoginComSucesso(res)
-			Serverest.salvarBearer(res)
+				ValidaServerest.validarLoginComSucesso(res)
+				Serverest.salvarBearer(res)
 			})
 		})	
 	})
-})
+
+
+	
+	it('Buscar e salvar um usuário de um arquivo JSON', () => {
+		let inteiro = Factory.gerarInteriroAleatorio()
+		Serverest.buscarUsuarios().then( res => {
+			cy.writeFile('./cypress/fixtures/usuario.json', res.body.usuarios[inteiro])
+			ValidaServerest.validarBuscaDeUsuarios(res)
+			cy.log(JSON.stringify(res.body.usuarios[inteiro]))
+		})	
+	})	
+
+	it('Buscar o usuário de um arquivo JSON', () => {
+		cy.fixture('usuario.json').then( json => {
+			let usuario = {
+				email: json.email,
+				password: json.password
+			}
+			Serverest.logar(usuario).then( res => {
+				ValidaServerest.validarLoginComSucesso(res)
+				Serverest.salvarBearer(res)
+			})
+		})
+	})	
+
+
+})	
+
+

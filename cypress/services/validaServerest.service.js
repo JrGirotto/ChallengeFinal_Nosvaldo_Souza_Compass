@@ -30,7 +30,7 @@ export default class ValidaServerest {
 	static validarCadastroDeProdutoComSucesso(resposta){
 		expect(resposta).to.be.a('object')
 		expect(resposta.body.message).to.be.a('string')
-		//expect(resposta.body.message).to.be.a('Cadastro realizado com sucesso')
+		expect(resposta.body.message).to.be.eq('Cadastro realizado com sucesso')
 		expect(resposta.body).to.haveOwnProperty('_id')
 	}
 
