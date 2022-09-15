@@ -8,14 +8,16 @@ describe('Casos de teste sobre a rota /usuario da API Serverest', () => {
 	
 	it('Deve buscar todos os usuários cadastrados na Serverest', () => {
 		Serverest.buscarUsuarios().then( res => {
+			cy.contractValidation(res, 'get-usuarios', 200)
 			ValidaServerest.validarBuscaDeUsuarios(res)
 		})		
 	})
-
+	
 	it('Não deve postar um novo usuário administrador existente', () => {
 		cy.postarUsuarioSemSucesso().then( res => {
-			expect(res).to.be.a('object')
-			expect(res.body.message).to.be.a('string')
+			cy.contractValidation(res, 'post-usuarios', 400)
+			//expect(res).to.be.a('object')
+			//expect(res.body.message).to.be.a('string')
 			expect(res.body.message).to.be.eq('Este email já está sendo usado')
 		})	
 	})

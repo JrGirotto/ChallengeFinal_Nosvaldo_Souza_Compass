@@ -7,10 +7,11 @@ export default class ValidaServerest {
 	// - Validar a busca de produtos
 	// - Validar o cadastro de produtos com sucesso
 
+	//Teste de Contrato (Só ficou o expect que não pode ser feito no teste de contrato)
 	static validarBuscaDeUsuarios(resposta){
-		expect(resposta).to.be.a('object')
-		expect(resposta.body.quantidade).to.be.a('number')
-		expect(resposta.body.quantidade).to.be.greaterThan(3)
+		//expect(resposta).to.be.a('object')
+		//expect(resposta.body.quantidade).to.be.a('number')
+		expect(resposta.body.quantidade).to.be.greaterThan(10)
 	}
 
 	static validarLoginComSucesso(resposta){

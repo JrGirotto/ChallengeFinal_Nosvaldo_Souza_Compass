@@ -1,8 +1,6 @@
-# LogicalForest_Nosvaldo_Souza_Compass
+# Automação de Testes de API com Cypress
 ---
 ## Sprint 5 - Tech
-
- **Automação de Testes de API com Cypress**
 
 ---
 **Tecnologias utilizadas nesta Sprint:**
@@ -27,14 +25,14 @@ Para instalação do Cypress, crie uma pasta para o seu projeto, abra o prompt d
 ```
 npm install --save-dev cypress@9.7.0
 ```
-Esse comando, também digitado no prompt de comando, dentro da pasta do seu projeto, irá instalar a API de TESTES Serverest localmente:
+Esse comando, também digitado no prompt de comando, dentro da pasta do seu projeto, irá instalar a API de TESTES Serverest localmente em sua mais nova atualização:
 ```
 npx serverest@latest
 ```
 
 ---
 
-<details open>
+<details>
 <summary>Mapa Mental - Serverest</summary>
 
 ![Mapa Mental - SERVEREST](Mapa_Mental/mapa_mental_serverest.png)
