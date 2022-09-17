@@ -4,5 +4,16 @@
 	"viewportWidth": 1600,
 	"viewportHeight": 900,
 	"chromeWebSecurity": false,
-	"numTestsKeptInMemory": 5
+	"numTestsKeptInMemory": 5,
+
+	"reporter": "cypress-mochawesome-reporter",
+	"reporterOptions": {
+		"reportDir": "cypress/reports/mocha",
+		"reportPageTitle": "Sprint 5 - Testes Automatizados com Cypress",
+		"reportTitle": "Testes Automatizados da API de estudos Serverest",
+		"reportFilename": "[status]_[datetime]-[name]-report",
+		"timestamp": "dd/mm/yyyy_HHMM",
+		"charts": true
+		
+	}	
 }

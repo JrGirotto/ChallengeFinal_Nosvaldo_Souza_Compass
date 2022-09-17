@@ -22,6 +22,15 @@ describe('Casos de teste sobre a rota /usuario da API Serverest', () => {
 		})	
 	})
 
+	//Erro Proposital para Testar Report
+	it('Erro Proposital para testar Report', () => {
+		cy.postarUsuarioSemSucesso().then( res => {
+			cy.contractValidation(res, 'post-usuarios', 400)
+			expect(res).not.to.be.a('object')
+			expect(res.body.message).to.be.a('number')
+		})	
+	})
+
 	it('Realizar o login com sucesso', () => {
 		Serverest.buscarUsuariosParaLogin()
 		cy.get('@usuarioLogin').then( usuario => {
@@ -56,7 +65,4 @@ describe('Casos de teste sobre a rota /usuario da API Serverest', () => {
 		})
 	})	
 
-
-})	
-
-
+})

@@ -11,6 +11,12 @@ function buscarArquivoConfig(arquivo) {
  */
 // eslint-disable-next-line no-unused-vars
 module.exports = (on, config) => {
+
+  //Configuração do Report Cypress
+  require('cypress-mochawesome-reporter/plugin')(on);
+
   const arquivo = config.env.configFile || "dev"
   return buscarArquivoConfig(arquivo)
+
 }
+

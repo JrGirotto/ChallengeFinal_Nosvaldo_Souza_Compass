@@ -43,7 +43,7 @@ npx serverest@latest
 ---
 
 ## Referências
- * **_[QA Camp](https://www.youtube.com/c/QACamp), [Cypress](https://www.cypress.io), [Serverest](http://www.serverest.dev), [Wikipedia](http://www.wikipedia.com.br)_**
+ * **_[QA Camp](https://www.youtube.com/c/QACamp), [Cypress](https://www.cypress.io), [Serverest](http://www.serverest.dev), [Wikipedia](http://www.wikipedia.com.br), [Mochawesome Reporter](https://www.youtube.com/watch?v=aR74j4Hk0vo)_**
 
 ---
 ## Créditos
