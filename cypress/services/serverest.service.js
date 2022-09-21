@@ -56,5 +56,16 @@ export default class Serverest {
 		})
 	}
 
+	/* static validarQuantidadeUsuarios(){
+		cy.get('@Response').then(res => {
+			ServerRest.validarQuantidadeUsuarios(res.body)
+		})
+	}
+
+	static deletarUsuarios(){
+		return cy.rest('DELETE', `URL_USUARIOS/${id}`)
+	}
+ */
+
 }
 

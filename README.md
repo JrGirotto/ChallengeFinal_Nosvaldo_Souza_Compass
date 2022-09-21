@@ -39,14 +39,60 @@ npx serverest@latest
 
 </details>
 
+---
+## Report com Cypress
+
+Requisitos utilizados nesse projeto: (Cypress 9.7.0 - Windows - Node >14)
+<br>
+
+1 - Instale a biblioteca **cypress-mochawesome-reporter**:
+
+```
+npm i --save-dev cypress-mochawesome-reporter
+```
+<br>
+2 - Adicione o seguinte código dentro do seu arquivo **cypress.json** para ativar a biblioteca instalada no passo acima e rodas algumas flags(configurações) para personalizar seu report:
+```     
+	"reporter": "cypress-mochawesome-reporter",
+	"reporterOptions": {
+		"reportDir": "cypress/reports/mocha",
+		"reportPageTitle": "Sprint 5 - Testes Automatizados com Cypress",
+		"reportTitle": "Testes Automatizados da API de estudos Serverest",
+		"reportFilename": "[status]_[datetime]-[name]",
+		"timestamp": "dd/mm/yyyy_HHMM",
+		"charts": true,
+		"overwrite": true,
+		"embeddedScreenshots": true,
+    	"inlineAssets": true,
+    	"saveAllAttempts": false
+```
+3 - E por fim adicione esse import no arquivo **index.js** 
+
+```
+import 'cypress-mochawesome-reporter/register';
+```
+<br>
+
+4 - Agora é só rodar o Cypress (Ele irá construir o arquivo HTML do Report em cima das SPECS encontradas)
+
+```
+npm run cy:run:prod
+```
+<details>
+<summary>Exemplo de Report HTML Gerado:</summary>
+
+![HTML gerado pelo Report](cypress/images/exemplo_html_%20report_readme.png)
+
+</details>
+
 
 ---
 
 ## Referências
- * **_[QA Camp](https://www.youtube.com/c/QACamp), [Cypress](https://www.cypress.io), [Serverest](http://www.serverest.dev), [Wikipedia](http://www.wikipedia.com.br), [Mochawesome Reporter](https://www.youtube.com/watch?v=aR74j4Hk0vo)_**
+ * **_[QA Camp](https://www.youtube.com/c/QACamp), [Cypress](https://www.cypress.io), [Serverest](http://www.serverest.dev), [Wikipedia](http://www.wikipedia.com.br), [Vídeo Mochawesome Reporter](https://www.youtube.com/watch?v=aR74j4Hk0vo), [Documentação Mochawesome Reporter](https://github.com/LironEr/cypress-mochawesome-reporter)_**
 
 ---
 ## Créditos
 
-* Agradecimentos à SM Larissa pelas dúvidas sanadas e todo acompanhamento e dedicação no projeto e também aos colegas pelas colaborações em equipe.
+* Agradecimentos à SM Larissa, Jacques e Matheus pelas dúvidas sanadas e todo acompanhamento e dedicação no projeto e também aos colegas pelas colaborações em equipe.
 

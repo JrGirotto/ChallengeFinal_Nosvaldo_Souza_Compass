@@ -11,9 +11,12 @@
 		"reportDir": "cypress/reports/mocha",
 		"reportPageTitle": "Sprint 5 - Testes Automatizados com Cypress",
 		"reportTitle": "Testes Automatizados da API de estudos Serverest",
-		"reportFilename": "[status]_[datetime]-[name]-report",
+		"reportFilename": "[status]_[datetime]-[name]",
 		"timestamp": "dd/mm/yyyy_HHMM",
-		"charts": true
-		
+		"charts": true,
+		"overwrite": true,
+		"embeddedScreenshots": true,
+    	"inlineAssets": true,
+    	"saveAllAttempts": false
 	}	
 }

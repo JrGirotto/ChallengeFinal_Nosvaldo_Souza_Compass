@@ -13,7 +13,7 @@ export default class Factory {
 		}
 	}
 
-	static gerarInteriroAleatorio(){
+	static gerarInteiroAleatorio(){
 		return faker.datatype.number(6)
 	}
 

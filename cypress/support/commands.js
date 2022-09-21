@@ -21,9 +21,6 @@ Cypress.Commands.add('contractValidation', (res, schema, status) => {
 })
 
 
-
-
-
 Cypress.Commands.add('postarUsuarioSemSucesso', () => {
 	return cy.request({
 		method: 'POST',
